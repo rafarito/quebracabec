@@ -6,6 +6,11 @@ import java.util.List;
 import java.util.Arrays;
 import java.util.Collections;
 
+//autores: Allan fernandes
+//arhur de oliveira
+//joão pedro ranolfi
+//rafael matos
+
 public class Design extends javax.swing.JFrame {
     Movimentacao movebutton = new Movimentacao();
 
