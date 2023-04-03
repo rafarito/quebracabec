@@ -13,6 +13,8 @@ import java.util.Collections;
 
 public class Design extends javax.swing.JFrame {
     Movimentacao movebutton = new Movimentacao();
+    int contagem = 0;
+    
 
     public Design() {
         initComponents();
@@ -42,14 +44,16 @@ public class Design extends javax.swing.JFrame {
         
         List<String> jogo = Arrays.asList("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","");
         Collections.shuffle(jogo);
+        movebutton.posit = jogo;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         bum.setText(jogo.get(0));
-        bum.setName("bum"); 
+        bum.setName("1"); 
         bum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bumActionPerformed(evt);
+                System.out.println(contagem);                
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -67,10 +71,11 @@ public class Design extends javax.swing.JFrame {
         });
         
         bdois.setText(jogo.get(1));
-        bdois.setName("bdois");
+        bdois.setName("2");
         bdois.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bdoisActionPerformed(evt);
+                bdoisActionPerformed(evt);   
+                System.out.println(contagem);               
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -88,10 +93,11 @@ public class Design extends javax.swing.JFrame {
         });
 
         btres.setText(jogo.get(2));
-        btres.setName("btres"); 
+        btres.setName("3"); 
         btres.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btresActionPerformed(evt);
+                btresActionPerformed(evt);   
+                System.out.println(contagem);              
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -109,10 +115,11 @@ public class Design extends javax.swing.JFrame {
         });
 
         bquatro.setText(jogo.get(3));
-        bquatro.setName("bquatro"); 
+        bquatro.setName("4"); 
         bquatro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bquatroActionPerformed(evt);
+                bquatroActionPerformed(evt);   
+                System.out.println(contagem);              
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -130,10 +137,11 @@ public class Design extends javax.swing.JFrame {
         });
 
         bcinco.setText(jogo.get(4));
-        bcinco.setName("bcinco"); 
+        bcinco.setName("5"); 
         bcinco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bcincoActionPerformed(evt);
+                bcincoActionPerformed(evt); 
+                System.out.println(contagem);                
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -151,10 +159,11 @@ public class Design extends javax.swing.JFrame {
         });
 
         bseis.setText(jogo.get(5));
-        bseis.setName("bseis"); 
+        bseis.setName("6"); 
         bseis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bseisActionPerformed(evt);
+                bseisActionPerformed(evt); 
+                System.out.println(contagem);                 
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -172,10 +181,11 @@ public class Design extends javax.swing.JFrame {
         });
 
         bsete.setText(jogo.get(6));
-        bsete.setName("bsete"); 
+        bsete.setName("7"); 
         bsete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bseteActionPerformed(evt);
+                bseteActionPerformed(evt);    
+                System.out.println(contagem);             
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -193,10 +203,11 @@ public class Design extends javax.swing.JFrame {
         });
 
         boito.setText(jogo.get(7));
-        boito.setName("boito"); 
+        boito.setName("8"); 
         boito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boitoActionPerformed(evt);
+                boitoActionPerformed(evt); 
+                System.out.println(contagem);                 
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -214,10 +225,11 @@ public class Design extends javax.swing.JFrame {
         });
 
         bnove.setText(jogo.get(8));
-        bnove.setName("bnove"); 
+        bnove.setName("9"); 
         bnove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bnoveActionPerformed(evt);
+                bnoveActionPerformed(evt);  
+                System.out.println(contagem);                
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -234,11 +246,12 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
-        btreze.setText(jogo.get(9));
-        btreze.setName("btreze"); 
+        btreze.setText(jogo.get(12));
+        btreze.setName("13"); 
         btreze.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btrezeActionPerformed(evt);
+                btrezeActionPerformed(evt); 
+                System.out.println(contagem);                
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -255,11 +268,12 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
-        bdez.setText(jogo.get(10));
-        bdez.setName("bdez"); 
+        bdez.setText(jogo.get(9));
+        bdez.setName("10"); 
         bdez.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bdezActionPerformed(evt);
+                bdezActionPerformed(evt);  
+                System.out.println(contagem);               
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -276,11 +290,12 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
-        bonze.setText(jogo.get(11));
-        bonze.setName("bonze"); 
+        bonze.setText(jogo.get(10));
+        bonze.setName("11"); 
         bonze.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bonzeActionPerformed(evt);
+                bonzeActionPerformed(evt);  
+                System.out.println(contagem);               
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -297,11 +312,12 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
-        bdoze.setText(jogo.get(12));
-        bdoze.setName("bdoze"); 
+        bdoze.setText(jogo.get(11));
+        bdoze.setName("12"); 
         bdoze.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bdozeActionPerformed(evt);
+                bdozeActionPerformed(evt);        
+                System.out.println(contagem);         
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -319,10 +335,11 @@ public class Design extends javax.swing.JFrame {
         });
 
         bquatorze.setText(jogo.get(13));
-        bquatorze.setName("bquatorze"); 
+        bquatorze.setName("14"); 
         bquatorze.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bquatorzeActionPerformed(evt);
+                bquatorzeActionPerformed(evt);   
+                System.out.println(contagem);              
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -339,11 +356,12 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
-        bdezesseis.setText(jogo.get(14));
-        bdezesseis.setName("bdezesseis"); 
+        bdezesseis.setText(jogo.get(15));
+        bdezesseis.setName("16"); 
         bdezesseis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bdezesseisActionPerformed(evt);
+                bdezesseisActionPerformed(evt);   
+                System.out.println(contagem);              
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -360,11 +378,12 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
-        bquinze.setText(jogo.get(15));
-        bquinze.setName("bquinze");
+        bquinze.setText(jogo.get(14));
+        bquinze.setName("15");
         bquinze.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bquinzeActionPerformed(evt);
+                bquinzeActionPerformed(evt); 
+                System.out.println(contagem); 
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -453,101 +472,92 @@ public class Design extends javax.swing.JFrame {
     private void bdezesseisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bdezesseisActionPerformed
       
         movebutton.mover(bdezesseis, bdoze, bquinze);
+        contagem++;
     }
 
     private void bumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bumActionPerformed
        
         movebutton.mover(bum,bdois,bcinco);
+        contagem++;
     }
     private void bdoisActionPerformed(java.awt.event.ActionEvent evt){
         
         movebutton.mover(bdois, bum, btres, bseis);
+        contagem++;
     }
     private void btresActionPerformed(java.awt.event.ActionEvent evt){
         
         movebutton.mover(btres, bdois, bquatro, bsete);
+        contagem++;
     }
     private void bquatroActionPerformed(java.awt.event.ActionEvent evt){
         
         movebutton.mover(bquatro, btres, boito);
+        contagem++;
     }
     private void bcincoActionPerformed(java.awt.event.ActionEvent evt){
        
         movebutton.mover(bcinco, bum, bseis, bnove);
+        contagem++;
     }
     private void bseisActionPerformed(java.awt.event.ActionEvent evt){
         
         movebutton.mover(bseis, bdois, bcinco, bsete, bdez);
+        contagem++;
     }
     private void bseteActionPerformed(java.awt.event.ActionEvent evt){
        
         movebutton.mover(bsete, btres, bseis, boito, bonze);
+        contagem++;
     }
     private void boitoActionPerformed(java.awt.event.ActionEvent evt){
        
         movebutton.mover(boito, bquatro, bsete, bdoze);
+        contagem++;
     }
     private void bnoveActionPerformed(java.awt.event.ActionEvent evt){
         
         movebutton.mover(bnove, bcinco, bdez, btreze);
+        contagem++;
     }
     private void bdezActionPerformed(java.awt.event.ActionEvent evt){
        
         movebutton.mover(bdez, bseis, bnove, bonze, bquatorze);
+        contagem++;
     }
     private void bonzeActionPerformed(java.awt.event.ActionEvent evt){
         
         movebutton.mover(bonze, bsete, bdez, bdoze, bquinze);
+        contagem++;
     }
     private void bdozeActionPerformed(java.awt.event.ActionEvent evt){
        
         movebutton.mover(bdoze, boito, bonze, bdezesseis);
+        contagem++;
     }
     private void btrezeActionPerformed(java.awt.event.ActionEvent evt){
       
         movebutton.mover(btreze, bnove, bquatorze);
+        contagem++;
     }
     private void bquatorzeActionPerformed(java.awt.event.ActionEvent evt){
         
         movebutton.mover(bquatorze, bdez, btreze,bquinze);
+        contagem++;
     }
     private void bquinzeActionPerformed(java.awt.event.ActionEvent evt){
         
         movebutton.mover(bquinze, bonze, bquatorze,bdezesseis);
+        contagem++;
     }
     private boolean verifica(){
-        if(bum.getText().equals("1")){
-            if(bdois.getText().equals("2")){
-                if(btres.getText().equals("3")){
-                    if(bquatro.getText().equals("4")){
-                        if(bcinco.getText().equals("5")){
-                            if(bseis.getText().equals("6")){
-                                if(bsete.getText().equals("7")){
-                                    if(boito.getText().equals("8")){
-                                        if(bnove.getText().equals("9")){
-                                            if(bdez.getText().equals("10")){
-                                                if(bonze.getText().equals("11")){
-                                                    if(bdoze.getText().equals("12")){
-                                                        if(btreze.getText().equals("13")){
-                                                            if(bquatorze.getText().equals("14")){
-                                                                if(bquinze.getText().equals("15")){
-                                                                    return true;
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+        List<String> correto = Arrays.asList("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","");
+        for(int i = 0;i < 16;i++){
+            if(movebutton.posit.get(i) != correto.get(i)){
+                return false;
             }
         }
-        return false;
+        return true;
     }
     
     public static void main(String args[]) {
