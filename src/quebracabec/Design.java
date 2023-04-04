@@ -42,7 +42,9 @@ public class Design extends javax.swing.JFrame {
         bquatorze = new javax.swing.JButton();
         bdezesseis = new javax.swing.JButton();
         bquinze = new javax.swing.JButton();
+        JLabel contacliq = new javax.swing.JLabel();
         JLabel contatemp = new javax.swing.JLabel();
+        JLabel tempo = new javax.swing.JLabel("tempo: ");
         
         List<String> jogo = Arrays.asList("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","");
         Collections.shuffle(jogo);
@@ -50,14 +52,15 @@ public class Design extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        contatemp.setText(Integer.toString(contagem));
+        contacliq.setText("cliques: "+ Integer.toString(contagem));
+        contatemp.setText("00:00:00");
 
         bum.setText(jogo.get(0));
         bum.setName("1"); 
         bum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bumActionPerformed(evt);
-                contatemp.setText(Integer.toString(contagem));                
+                contacliq.setText("cliques: "+ Integer.toString(contagem));                
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -79,7 +82,7 @@ public class Design extends javax.swing.JFrame {
         bdois.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bdoisActionPerformed(evt);   
-                contatemp.setText(Integer.toString(contagem));               
+                contacliq.setText("cliques: "+ Integer.toString(contagem));               
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -101,7 +104,7 @@ public class Design extends javax.swing.JFrame {
         btres.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btresActionPerformed(evt);   
-                contatemp.setText(Integer.toString(contagem));              
+                contacliq.setText("cliques: "+ Integer.toString(contagem));              
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -123,7 +126,7 @@ public class Design extends javax.swing.JFrame {
         bquatro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bquatroActionPerformed(evt);   
-                contatemp.setText(Integer.toString(contagem));              
+                contacliq.setText("cliques: "+ Integer.toString(contagem));              
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -145,7 +148,7 @@ public class Design extends javax.swing.JFrame {
         bcinco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bcincoActionPerformed(evt); 
-                contatemp.setText(Integer.toString(contagem));                
+                contacliq.setText("cliques: "+ Integer.toString(contagem));                
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -167,7 +170,7 @@ public class Design extends javax.swing.JFrame {
         bseis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bseisActionPerformed(evt); 
-                contatemp.setText(Integer.toString(contagem));                 
+                contacliq.setText("cliques: "+ Integer.toString(contagem));                 
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -189,7 +192,7 @@ public class Design extends javax.swing.JFrame {
         bsete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bseteActionPerformed(evt);    
-                contatemp.setText(Integer.toString(contagem));             
+                contacliq.setText("cliques: "+ Integer.toString(contagem));             
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -211,7 +214,7 @@ public class Design extends javax.swing.JFrame {
         boito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boitoActionPerformed(evt); 
-                contatemp.setText(Integer.toString(contagem));                 
+                contacliq.setText("cliques: "+ Integer.toString(contagem));                 
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -233,7 +236,7 @@ public class Design extends javax.swing.JFrame {
         bnove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bnoveActionPerformed(evt);  
-                contatemp.setText(Integer.toString(contagem));                
+                contacliq.setText("cliques: "+ Integer.toString(contagem));                
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -255,7 +258,7 @@ public class Design extends javax.swing.JFrame {
         btreze.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btrezeActionPerformed(evt); 
-                contatemp.setText(Integer.toString(contagem));                
+                contacliq.setText("cliques: "+ Integer.toString(contagem));                
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -277,7 +280,7 @@ public class Design extends javax.swing.JFrame {
         bdez.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bdezActionPerformed(evt);  
-                contatemp.setText(Integer.toString(contagem));               
+                contacliq.setText("cliques: "+ Integer.toString(contagem));               
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -299,7 +302,7 @@ public class Design extends javax.swing.JFrame {
         bonze.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bonzeActionPerformed(evt);  
-                contatemp.setText(Integer.toString(contagem));               
+                contacliq.setText("cliques: "+ Integer.toString(contagem));               
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -321,7 +324,7 @@ public class Design extends javax.swing.JFrame {
         bdoze.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bdozeActionPerformed(evt);        
-                contatemp.setText(Integer.toString(contagem));         
+                contacliq.setText("cliques: "+ Integer.toString(contagem));         
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -343,7 +346,7 @@ public class Design extends javax.swing.JFrame {
         bquatorze.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bquatorzeActionPerformed(evt);   
-                contatemp.setText(Integer.toString(contagem));              
+                contacliq.setText("cliques: "+ Integer.toString(contagem));              
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -365,7 +368,7 @@ public class Design extends javax.swing.JFrame {
         bdezesseis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bdezesseisActionPerformed(evt);   
-                contatemp.setText(Integer.toString(contagem));              
+                contacliq.setText("cliques: "+ Integer.toString(contagem));              
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -387,7 +390,7 @@ public class Design extends javax.swing.JFrame {
         bquinze.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bquinzeActionPerformed(evt); 
-                contatemp.setText(Integer.toString(contagem)); 
+                contacliq.setText("cliques: "+ Integer.toString(contagem)); 
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
@@ -411,7 +414,7 @@ public class Design extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(contatemp, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
+                    .addComponent(contacliq, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
                     .addComponent(btreze, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
                     .addComponent(bnove, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(bcinco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -419,14 +422,16 @@ public class Design extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(bdez, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(bseis, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tempo, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
+                        .addComponent(bdez, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bseis, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(bdois, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(bquatorze, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(contatemp, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
                             .addComponent(btres, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(bsete, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(bonze, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -470,6 +475,8 @@ public class Design extends javax.swing.JFrame {
                     .addComponent(bquinze, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(tempo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(contacliq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(contatemp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -481,7 +488,7 @@ public class Design extends javax.swing.JFrame {
       
         movebutton.mover(bdezesseis, bdoze, bquinze);
         contagem++;
-        contatemp.setText(Integer.toString(contagem));
+        contacliq.setText("cliques: "+ Integer.toString(contagem));
     }
 
     private void bumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bumActionPerformed
@@ -615,6 +622,8 @@ public class Design extends javax.swing.JFrame {
     private javax.swing.JButton btres;
     private javax.swing.JButton btreze;
     private javax.swing.JButton bum;
-    public javax.swing.JLabel contatemp;
+    private javax.swing.JLabel contacliq;
+    private javax.swing.JLabel contatemp;
+    private javax.swing.JLabel tempo;
 
 }
