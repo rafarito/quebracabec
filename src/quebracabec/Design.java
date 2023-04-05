@@ -15,6 +15,7 @@ import java.util.Collections;
 public class Design extends javax.swing.JFrame {
     Movimentacao movebutton = new Movimentacao();
     int contagem = 0;
+    long time = 0;
     
 
     public Design() {
@@ -53,7 +54,8 @@ public class Design extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         contacliq.setText("cliques: "+ Integer.toString(contagem));
-        contatemp.setText("00:00:00");
+        time = System.nanoTime();
+        contatemp.setText(Long.toString(time));
 
         bum.setText(jogo.get(0));
         bum.setName("1"); 
