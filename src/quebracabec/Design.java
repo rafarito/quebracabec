@@ -6,6 +6,8 @@ import javax.swing.JOptionPane;
 import java.util.List;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Timer;
+import java.util.TimerTask;
 
 //autores: Allan fernandes
 //arhur de oliveira
@@ -15,7 +17,7 @@ import java.util.Collections;
 public class Design extends javax.swing.JFrame {
     Movimentacao movebutton = new Movimentacao();
     int contagem = 0;
-    long time = 0;
+    int seg = 0, min = 0, hor = 0;
     
 
     public Design() {
@@ -26,7 +28,7 @@ public class Design extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
    
     private void initComponents() {
-
+        
         bum = new javax.swing.JButton();
         bdois = new javax.swing.JButton();
         btres = new javax.swing.JButton();
@@ -46,6 +48,30 @@ public class Design extends javax.swing.JFrame {
         JLabel contacliq = new javax.swing.JLabel();
         JLabel contatemp = new javax.swing.JLabel();
         JLabel tempo = new javax.swing.JLabel("tempo: ");
+
+        Timer cron = new Timer();
+
+        TimerTask mostratemp = new TimerTask() {
+            
+            @Override
+            public void run(){
+                if(seg + 1 == 60){
+                    seg = 0;
+                    if(min + 1 == 60){
+                        min = 0;
+                        hor++;
+                    }else{
+                        min++;
+                    }
+                }else{
+                    seg++;
+                }
+
+                contatemp.setText(String.format("%02d:%02d:%02d",hor,min,seg));
+            }
+        };
+
+        cron.scheduleAtFixedRate(mostratemp, 0, 1000);
         
         List<String> jogo = Arrays.asList("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","");
         Collections.shuffle(jogo);
@@ -54,8 +80,6 @@ public class Design extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         contacliq.setText("cliques: "+ Integer.toString(contagem));
-        time = System.nanoTime();
-        contatemp.setText(Long.toString(time));
 
         bum.setText(jogo.get(0));
         bum.setName("1"); 
@@ -66,7 +90,7 @@ public class Design extends javax.swing.JFrame {
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
-                        resp = JOptionPane.showConfirmDialog(null, "você deseja continuar?", "continuar",JOptionPane.YES_NO_OPTION,1);
+                        resp = JOptionPane.showConfirmDialog(null, String.format("Parabens!!!\nVocê conseguiu em %02d:%02d:%02d utilizando %d cliques\ndeseja continuar?",hor,min,seg,contagem), "continuar",JOptionPane.YES_NO_OPTION,1);
                         if(resp == 0){
                             Design.this.setVisible(false);
                             Design.this.dispose();
@@ -88,11 +112,15 @@ public class Design extends javax.swing.JFrame {
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
-                        resp = JOptionPane.showConfirmDialog(null, "você deseja continuar?", "continuar",JOptionPane.YES_NO_OPTION,1);
+                        resp = JOptionPane.showConfirmDialog(null, String.format("Parabens!!!\nVocê conseguiu em %02d:%02d:%02d utilizando %d cliques\ndeseja continuar?",hor,min,seg,contagem), "continuar",JOptionPane.YES_NO_OPTION,1);
                         if(resp == 0){
                             Design.this.setVisible(false);
                             Design.this.dispose();
                             new Design().setVisible(true);
+                            hor = 0;
+                            min = 0;
+                            seg = 0;
+                            contagem = 0;
                         }else{
                             System.exit(0);
                         }
@@ -110,11 +138,15 @@ public class Design extends javax.swing.JFrame {
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
-                        resp = JOptionPane.showConfirmDialog(null, "você deseja continuar?", "continuar",JOptionPane.YES_NO_OPTION,1);
+                        resp = JOptionPane.showConfirmDialog(null, String.format("Parabens!!!\nVocê conseguiu em %02d:%02d:%02d utilizando %d cliques\ndeseja continuar?",hor,min,seg,contagem), "continuar",JOptionPane.YES_NO_OPTION,1);
                         if(resp == 0){
                             Design.this.setVisible(false);
                             Design.this.dispose();
                             new Design().setVisible(true);
+                            hor = 0;
+                            min = 0;
+                            seg = 0;
+                            contagem = 0;
                         }else{
                             System.exit(0);
                         }
@@ -132,11 +164,15 @@ public class Design extends javax.swing.JFrame {
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
-                        resp = JOptionPane.showConfirmDialog(null, "você deseja continuar?", "continuar",JOptionPane.YES_NO_OPTION,1);
+                        resp = JOptionPane.showConfirmDialog(null, String.format("Parabens!!!\nVocê conseguiu em %02d:%02d:%02d utilizando %d cliques\ndeseja continuar?",hor,min,seg,contagem), "continuar",JOptionPane.YES_NO_OPTION,1);
                         if(resp == 0){
                             Design.this.setVisible(false);
                             Design.this.dispose();
                             new Design().setVisible(true);
+                            hor = 0;
+                            min = 0;
+                            seg = 0;
+                            contagem = 0;
                         }else{
                             System.exit(0);
                         }
@@ -154,11 +190,15 @@ public class Design extends javax.swing.JFrame {
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
-                        resp = JOptionPane.showConfirmDialog(null, "você deseja continuar?", "continuar",JOptionPane.YES_NO_OPTION,1);
+                        resp = JOptionPane.showConfirmDialog(null, String.format("Parabens!!!\nVocê conseguiu em %02d:%02d:%02d utilizando %d cliques\ndeseja continuar?",hor,min,seg,contagem), "continuar",JOptionPane.YES_NO_OPTION,1);
                         if(resp == 0){
                             Design.this.setVisible(false);
                             Design.this.dispose();
                             new Design().setVisible(true);
+                            hor = 0;
+                            min = 0;
+                            seg = 0;
+                            contagem = 0;
                         }else{
                             System.exit(0);
                         }
@@ -176,11 +216,15 @@ public class Design extends javax.swing.JFrame {
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
-                        resp = JOptionPane.showConfirmDialog(null, "você deseja continuar?", "continuar",JOptionPane.YES_NO_OPTION,1);
+                        resp = JOptionPane.showConfirmDialog(null, String.format("Parabens!!!\nVocê conseguiu em %02d:%02d:%02d utilizando %d cliques\ndeseja continuar?",hor,min,seg,contagem), "continuar",JOptionPane.YES_NO_OPTION,1);
                         if(resp == 0){
                             Design.this.setVisible(false);
                             Design.this.dispose();
                             new Design().setVisible(true);
+                            hor = 0;
+                            min = 0;
+                            seg = 0;
+                            contagem = 0;
                         }else{
                             System.exit(0);
                         }
@@ -198,11 +242,15 @@ public class Design extends javax.swing.JFrame {
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
-                        resp = JOptionPane.showConfirmDialog(null, "você deseja continuar?", "continuar",JOptionPane.YES_NO_OPTION,1);
+                        resp = JOptionPane.showConfirmDialog(null, String.format("Parabens!!!\nVocê conseguiu em %02d:%02d:%02d utilizando %d cliques\ndeseja continuar?",hor,min,seg,contagem), "continuar",JOptionPane.YES_NO_OPTION,1);
                         if(resp == 0){
                             Design.this.setVisible(false);
                             Design.this.dispose();
                             new Design().setVisible(true);
+                            hor = 0;
+                            min = 0;
+                            seg = 0;
+                            contagem = 0;
                         }else{
                             System.exit(0);
                         }
@@ -220,11 +268,15 @@ public class Design extends javax.swing.JFrame {
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
-                        resp = JOptionPane.showConfirmDialog(null, "você deseja continuar?", "continuar",JOptionPane.YES_NO_OPTION,1);
+                        resp = JOptionPane.showConfirmDialog(null, String.format("Parabens!!!\nVocê conseguiu em %02d:%02d:%02d utilizando %d cliques\ndeseja continuar?",hor,min,seg,contagem), "continuar",JOptionPane.YES_NO_OPTION,1);
                         if(resp == 0){
                             Design.this.setVisible(false);
                             Design.this.dispose();
                             new Design().setVisible(true);
+                            hor = 0;
+                            min = 0;
+                            seg = 0;
+                            contagem = 0;
                         }else{
                             System.exit(0);
                         }
@@ -242,11 +294,15 @@ public class Design extends javax.swing.JFrame {
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
-                        resp = JOptionPane.showConfirmDialog(null, "você deseja continuar?", "continuar",JOptionPane.YES_NO_OPTION,1);
+                        resp = JOptionPane.showConfirmDialog(null, String.format("Parabens!!!\nVocê conseguiu em %02d:%02d:%02d utilizando %d cliques\ndeseja continuar?",hor,min,seg,contagem), "continuar",JOptionPane.YES_NO_OPTION,1);
                         if(resp == 0){
                             Design.this.setVisible(false);
                             Design.this.dispose();
                             new Design().setVisible(true);
+                            hor = 0;
+                            min = 0;
+                            seg = 0;
+                            contagem = 0;
                         }else{
                             System.exit(0);
                         }
@@ -264,11 +320,15 @@ public class Design extends javax.swing.JFrame {
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
-                        resp = JOptionPane.showConfirmDialog(null, "você deseja continuar?", "continuar",JOptionPane.YES_NO_OPTION,1);
+                        resp = JOptionPane.showConfirmDialog(null, String.format("Parabens!!!\nVocê conseguiu em %02d:%02d:%02d utilizando %d cliques\ndeseja continuar?",hor,min,seg,contagem), "continuar",JOptionPane.YES_NO_OPTION,1);
                         if(resp == 0){
                             Design.this.setVisible(false);
                             Design.this.dispose();
                             new Design().setVisible(true);
+                            hor = 0;
+                            min = 0;
+                            seg = 0;
+                            contagem = 0;
                         }else{
                             System.exit(0);
                         }
@@ -286,11 +346,15 @@ public class Design extends javax.swing.JFrame {
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
-                        resp = JOptionPane.showConfirmDialog(null, "você deseja continuar?", "continuar",JOptionPane.YES_NO_OPTION,1);
+                        resp = JOptionPane.showConfirmDialog(null, String.format("Parabens!!!\nVocê conseguiu em %02d:%02d:%02d utilizando %d cliques\ndeseja continuar?",hor,min,seg,contagem), "continuar",JOptionPane.YES_NO_OPTION,1);
                         if(resp == 0){
                             Design.this.setVisible(false);
                             Design.this.dispose();
                             new Design().setVisible(true);
+                            hor = 0;
+                            min = 0;
+                            seg = 0;
+                            contagem = 0;
                         }else{
                             System.exit(0);
                         }
@@ -308,11 +372,15 @@ public class Design extends javax.swing.JFrame {
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
-                        resp = JOptionPane.showConfirmDialog(null, "você deseja continuar?", "continuar",JOptionPane.YES_NO_OPTION,1);
+                        resp = JOptionPane.showConfirmDialog(null, String.format("Parabens!!!\nVocê conseguiu em %02d:%02d:%02d utilizando %d cliques\ndeseja continuar?",hor,min,seg,contagem), "continuar",JOptionPane.YES_NO_OPTION,1);
                         if(resp == 0){
                             Design.this.setVisible(false);
                             Design.this.dispose();
                             new Design().setVisible(true);
+                            hor = 0;
+                            min = 0;
+                            seg = 0;
+                            contagem = 0;
                         }else{
                             System.exit(0);
                         }
@@ -330,11 +398,15 @@ public class Design extends javax.swing.JFrame {
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
-                        resp = JOptionPane.showConfirmDialog(null, "você deseja continuar?", "continuar",JOptionPane.YES_NO_OPTION,1);
+                        resp = JOptionPane.showConfirmDialog(null, String.format("Parabens!!!\nVocê conseguiu em %02d:%02d:%02d utilizando %d cliques\ndeseja continuar?",hor,min,seg,contagem), "continuar",JOptionPane.YES_NO_OPTION,1);
                         if(resp == 0){
                             Design.this.setVisible(false);
                             Design.this.dispose();
                             new Design().setVisible(true);
+                            hor = 0;
+                            min = 0;
+                            seg = 0;
+                            contagem = 0;
                         }else{
                             System.exit(0);
                         }
@@ -352,11 +424,15 @@ public class Design extends javax.swing.JFrame {
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
-                        resp = JOptionPane.showConfirmDialog(null, "você deseja continuar?", "continuar",JOptionPane.YES_NO_OPTION,1);
+                        resp = JOptionPane.showConfirmDialog(null, String.format("Parabens!!!\nVocê conseguiu em %02d:%02d:%02d utilizando %d cliques\ndeseja continuar?",hor,min,seg,contagem), "continuar",JOptionPane.YES_NO_OPTION,1);
                         if(resp == 0){
                             Design.this.setVisible(false);
                             Design.this.dispose();
                             new Design().setVisible(true);
+                            hor = 0;
+                            min = 0;
+                            seg = 0;
+                            contagem = 0;
                         }else{
                             System.exit(0);
                         }
@@ -374,11 +450,15 @@ public class Design extends javax.swing.JFrame {
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
-                        resp = JOptionPane.showConfirmDialog(null, "você deseja continuar?", "continuar",JOptionPane.YES_NO_OPTION,1);
+                        resp = JOptionPane.showConfirmDialog(null, String.format("Parabens!!!\nVocê conseguiu em %02d:%02d:%02d utilizando %d cliques\ndeseja continuar?",hor,min,seg,contagem), "continuar",JOptionPane.YES_NO_OPTION,1);
                         if(resp == 0){
                             Design.this.setVisible(false);
                             Design.this.dispose();
                             new Design().setVisible(true);
+                            hor = 0;
+                            min = 0;
+                            seg = 0;
+                            contagem = 0;
                         }else{
                             System.exit(0);
                         }
@@ -396,11 +476,15 @@ public class Design extends javax.swing.JFrame {
                 if(bdezesseis.getText().equals("")){
                     if(verifica() == true){
                         int resp;
-                        resp = JOptionPane.showConfirmDialog(null, "você deseja continuar?", "continuar",JOptionPane.YES_NO_OPTION,1);
+                        resp = JOptionPane.showConfirmDialog(null, String.format("Parabens!!!\nVocê conseguiu em %02d:%02d:%02d utilizando %d cliques\ndeseja continuar?",hor,min,seg,contagem), "continuar",JOptionPane.YES_NO_OPTION,1);
                         if(resp == 0){
                             Design.this.setVisible(false);
                             Design.this.dispose();
                             new Design().setVisible(true);
+                            hor = 0;
+                            min = 0;
+                            seg = 0;
+                            contagem = 0;
                         }else{
                             System.exit(0);
                         }
@@ -490,7 +574,6 @@ public class Design extends javax.swing.JFrame {
       
         movebutton.mover(bdezesseis, bdoze, bquinze);
         contagem++;
-        contacliq.setText("cliques: "+ Integer.toString(contagem));
     }
 
     private void bumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bumActionPerformed
@@ -625,7 +708,6 @@ public class Design extends javax.swing.JFrame {
     private javax.swing.JButton btreze;
     private javax.swing.JButton bum;
     private javax.swing.JLabel contacliq;
-    private javax.swing.JLabel contatemp;
-    private javax.swing.JLabel tempo;
+    public javax.swing.JLabel contatemp;
 
 }
